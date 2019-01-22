@@ -73,7 +73,8 @@ def from_origin(origin):
     df = pd.read_excel("data/migration_from_"+origin+".xlsx", skiprows=9, skipfooter=2).fillna(value=0)
     df.columns = ["destination", "all", "males", "females"]
     df = df.loc[df["all"]!=0] 
-    df.head(10)
+    print("\nCurrent address of previous %s residents" % origin)
+    print(df.head(10))
 
     df_desc = df.sort_values(by=["all"], ascending=False)
 
@@ -81,7 +82,8 @@ def from_origin(origin):
     perc_df = df_desc[["all", "males", "females"]]
     perc_df = perc_df / perc_df.sum() * 100                                 
     perc_df = pd.concat([df_desc["destination"], perc_df], axis=1)
-    perc_df.round(2).head(10)
+    print("\nDistribution of current address - %% of total")
+    print(perc_df.round(2).head(10))
 
     print("\n%d/%d (%.2f%%) remained in %s" % (df.loc[df['destination'] == origin, "all"], 
         df['all'].sum(), perc_df.loc[perc_df['destination'] == origin, "all"], origin))
