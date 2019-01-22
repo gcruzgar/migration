@@ -58,7 +58,7 @@ def to_destination(destination):
 
     fig, ax = plt.subplots(1,1, figsize=(7,7))
     ax.axis('off')
-    ax.set_title("Migration to %s" % destination)
+    ax.set_title("Origin of Migration to %s" % destination)
     sm = plt.cm.ScalarMappable(cmap="OrRd", norm=plt.Normalize(vmin=0,vmax=max(merged['all'])))
     sm._A = []
     fig.colorbar(sm)
@@ -108,7 +108,7 @@ def from_origin(origin):
 
     fig, ax = plt.subplots(1,1, figsize=(7,7))
     ax.axis('off')
-    ax.set_title("Migration from %s" % origin)
+    ax.set_title("Destination of Migration from %s" % origin)
     sm = plt.cm.ScalarMappable(cmap="OrRd", norm=plt.Normalize(vmin=0,vmax=max(merged['all'])))
     sm._A = []
     fig.colorbar(sm)
