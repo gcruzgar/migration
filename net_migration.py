@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-
+This script reads census OD data to output the net migration in each local authority district.
+A shapefile of the UK is read to plot a cloropleth map of net migration.
 """
 import pandas as pd 
 import numpy as np
