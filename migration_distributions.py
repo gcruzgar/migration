@@ -44,10 +44,11 @@ def to_destination(destination):
     plt.title("Address one year ago - 2011 Census - %s" % destination)
 
     # top 10 emigrators
-    plt.figure()
+    plt.figure(figsize=[12,6])
     plt.bar(df_desc["origin"][1:11], df_desc["all"][1:11]) # first 10 values that aren't the destination
     #plt.xlabel("Origin")
-    plt.ylabel("Number of people")
+    plt.ylabel("Number of people").set_fontsize(11)
+    plt.xticks(fontsize=11)
     plt.title("Largest Migrators to %s" % destination)
     plt.show()
 
@@ -96,10 +97,11 @@ def from_origin(origin):
     plt.title("New Destination - 2011 Census - %s" % origin)
 
     # top 10 destinations
-    plt.figure()
+    plt.figure(figsize=[12,6])
     plt.bar(df_desc["destination"][1:11], df_desc["all"][1:11]) # first 10 values that aren't the origin
     #plt.xlabel("Destination")
-    plt.ylabel("Number of people")
+    plt.xticks(fontsize=11)
+    plt.ylabel("Number of people").set_fontsize(11)
     plt.title("Top Destinations of %s Migrators" % origin)
     plt.show()
 
