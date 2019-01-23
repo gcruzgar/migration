@@ -24,7 +24,7 @@ merged = map_df.set_index("lad17nm").join(pd.DataFrame(total_in)).fillna(value=0
 merged.rename(columns={0: 'total_in'}, inplace=True)
 fig, ax = plt.subplots(1,1, figsize=(8,7))
 ax.axis('off')
-ax.set_title("Net External Migration - 2011 Census")
+ax.set_title("UK Destination of External Migration - 2011 Census")
 sm = plt.cm.ScalarMappable(cmap="OrRd", norm=plt.Normalize(vmin=min(merged['total_in']),vmax=max(merged['total_in'])))
 sm._A = []
 fig.colorbar(sm)
