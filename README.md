@@ -16,4 +16,4 @@ The data used displays the changes in residence from one year to the next.
 ![Net Internal Migration](img/net_internal_migration.png)    
 **Figure 4.** Net Internal Migration in the UK. In general, net migration is positive for big cities such as Manchester, as well as the capitals of Wales (Cardiff) and Northern Ireland (Belfast). It is interesting to note that London has a strongly negative net internal migration, perhaps due to a positive external migration which then moves internally across the UK.    
 ![External Migration](img/external_migration_to_UK.png)        
-**Figure 5.** External Migration to the UK.     
+**Figure 5.** External Migration to the UK. Similar to internal migration, big cities attract external migration. The key difference is that London is a major destination for external migration.     
