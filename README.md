@@ -13,5 +13,7 @@ The data used displays the changes in residence from one year to the next.
 **Figure 2.** Top 10 origins of migration to Leeds.         
 ![Migration from Leeds](img/migration_from_Leeds.png)    
 **Figure 3.** Destination of Migration Originating from Leeds. The destination of migration from Leeds looks quite similar to the distribution seen in figure one.    
-![net_migration](img/net_internal_migration.png)    
+![Net Internal Migration](img/net_internal_migration.png)    
 **Figure 4.** Net Internal Migration in the UK. In general, net migration is positive for big cities such as Manchester, as well as the capitals of Wales (Cardiff) and Northern Ireland (Belfast). It is interesting to note that London has a strongly negative net internal migration, perhaps due to a positive external migration which then moves internally across the UK.    
+![External Migration](img/external_migration_to_UK.png)        
+**Figure 5.** External Migration to the UK.     
