@@ -36,10 +36,10 @@ def migration():
     map_df = gpd.read_file("data/UK_LAD_shapefiles_2017/UK_LAD.shp")
     merged = map_df.set_index("lad17nm").join(pd.DataFrame(net_migration)).fillna(value=0)
     merged.rename(columns={0: 'net_migration'}, inplace=True)
-    merged.head()
+    #merged.head()
     fig, ax = plt.subplots(1,1, figsize=(8,7))
     ax.axis('off')
-    ax.set_title("Net Migration - 2011 Census")
+    ax.set_title("Net Internal Migration - 2011 Census")
     sm = plt.cm.ScalarMappable(cmap="OrRd", norm=plt.Normalize(vmin=min(merged['net_migration']),vmax=max(merged['net_migration'])))
     sm._A = []
     fig.colorbar(sm)
