@@ -6,6 +6,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import geopandas as gpd 
+from utils import uk_plot
 
 # Internal migration
 odm = pd.read_csv("data/UK_OD_2011.csv", skiprows=10, skipfooter=5) # load migration data
@@ -38,15 +39,7 @@ print("\nTop ten net attractors of migration (internal + external):")
 print(net_migration.sort_values(ascending=False).head(10))
 
 # plots
-map_df = gpd.read_file("data/UK_LAD_shapefiles_2017/UK_LAD.shp")
-merged = map_df.set_index("lad17nm").join(pd.DataFrame(net_migration)).fillna(value=0)
-merged.rename(columns={0: 'net_migration'}, inplace=True)
-
-fig, ax = plt.subplots(1,1, figsize=(8,7))
-ax.axis('off')
-ax.set_title("Net Migration - 2011 Census")
-sm = plt.cm.ScalarMappable(cmap="OrRd", norm=plt.Normalize(vmin=min(merged['net_migration']),vmax=max(merged['net_migration'])))
-sm._A = []
-fig.colorbar(sm)
-merged.plot(column='net_migration', cmap='OrRd', linewidth=0.8, edgecolor='0.8', ax=ax)
-plt.show()
+shp_path = "data/UK_LAD_shapefiles_2017/UK_LAD.shp"
+var_name = net_migration
+title = "Net Migration - 2011 Census"
+uk_plot(shp_path, var_name, title)

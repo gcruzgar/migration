@@ -8,6 +8,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import geopandas as gpd 
+from utils import uk_plot
 
 def migration():
 
@@ -30,22 +31,15 @@ def migration():
     print("\nTop ten net emittors of internal migration:")
     print(net_migration.sort_values().head(10))
 
-    # plots
-    # map_df = gpd.read_file("data/EW_LAD_shapefiles_2011/EW_LAD.shp")
-    # merged = map_df.set_index("cmlad11nm").join(pd.DataFrame(net_migration)).fillna(value=0)
-    map_df = gpd.read_file("data/UK_LAD_shapefiles_2017/UK_LAD.shp")
-    merged = map_df.set_index("lad17nm").join(pd.DataFrame(net_migration)).fillna(value=0)
-    merged.rename(columns={0: 'net_migration'}, inplace=True)
-    #merged.head()
-    fig, ax = plt.subplots(1,1, figsize=(8,7))
-    ax.axis('off')
-    ax.set_title("Net Internal Migration - 2011 Census")
-    sm = plt.cm.ScalarMappable(cmap="OrRd", norm=plt.Normalize(vmin=min(merged['net_migration']),vmax=max(merged['net_migration'])))
-    sm._A = []
-    fig.colorbar(sm)
-    merged.plot(column='net_migration', cmap='OrRd', linewidth=0.8, edgecolor='0.8', ax=ax)
-    plt.show()
-
     #net_migration.to_csv("data/net_migration.csv")
+    return net_migration
 
-migration()
+net_migration = migration()
+
+# plots
+shp_path = "data/UK_LAD_shapefiles_2017/UK_LAD.shp"
+var_name = net_migration
+title = "Net Internal Migration - 2011 Census"
+# map_df = gpd.read_file("data/EW_LAD_shapefiles_2011/EW_LAD.shp")
+# merged = map_df.set_index("cmlad11nm").join(pd.DataFrame(net_migration)).fillna(value=0)
+uk_plot(shp_path, var_name, title)
