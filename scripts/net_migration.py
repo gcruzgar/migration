@@ -12,7 +12,7 @@ from utils import uk_plot
 
 def migration():
 
-    odm = pd.read_csv("data/UK_OD_2011.csv", skiprows=10, skipfooter=5) # load migration data
+    odm = pd.read_csv("data/UK_OD_2011.csv", skiprows=10, skipfooter=5, engine='python') # load migration data
     odm = odm.rename(columns = {                                   # rename column for ease
         "usual residence : 2011 census merged local authority district": "destination"})
     odm = odm.set_index("destination")                             # set destination as index

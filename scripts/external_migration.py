@@ -8,16 +8,23 @@ import matplotlib.pyplot as plt
 import geopandas as gpd 
 from utils import uk_plot
 
-odm = pd.read_csv("data/international_migration_2011.csv", skiprows=8, skipfooter=6) # load migration data
-odm = odm.rename(columns = {                                   # rename column for ease
-    "currently residing in : 2011 census merged local authority district": "destination"})
-odm = odm.set_index("destination")                             # set destination as index
-odm.columns.name = "origin"                                    # columns are the origin
+def internal_migration():
 
-total_in = odm.sum(axis=1)
-total_from = odm.sum(axis=0)
-print("\n Top ten attractors of external migration:")
-print(total_in.sort_values(ascending=False).head(10))
+    odm = pd.read_csv("data/international_migration_2011.csv",    # load migration data
+        skiprows=8, skipfooter=6, engine='python') 
+    odm = odm.rename(columns = {                                  # rename column for ease
+        "currently residing in : 2011 census merged local authority district": "destination"})
+    odm = odm.set_index("destination")                            # set destination as index
+    odm.columns.name = "origin"                                   # columns are the origin
+
+    total_in = odm.sum(axis=1)
+    total_from = odm.sum(axis=0)
+    print("\n Top ten attractors of external migration:")
+    print(total_in.sort_values(ascending=False).head(10))
+
+    return total_in, total_from
+
+total_in, total_from = internal_migration()
 
 # plots
 shp_path = "data/UK_LAD_shapefiles_2017/UK_LAD.shp"
