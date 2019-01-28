@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-
+This script displays the net migration including external migration.
+However, it does not take into account migration leaving the country.
 """
 import pandas as pd 
 import numpy as np

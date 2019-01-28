@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """
-
+This script uses Census data on external migration.
+Outputs dataframes with the origin and destination of migrators to the UK.
+Also shows a cloropleth map of the destinations of migration.
 """
 import pandas as pd 
 import numpy as np
@@ -8,7 +10,7 @@ import matplotlib.pyplot as plt
 import geopandas as gpd 
 from utils import uk_plot
 
-def internal_migration():
+def external_migration():
 
     odm = pd.read_csv("data/international_migration_2011.csv",    # load migration data
         skiprows=8, skipfooter=6, engine='python') 
@@ -24,7 +26,7 @@ def internal_migration():
 
     return total_in, total_from
 
-total_in, total_from = internal_migration()
+total_in, total_from = external_migration()
 
 # plots
 shp_path = "data/UK_LAD_shapefiles_2017/UK_LAD.shp"
