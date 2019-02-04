@@ -119,5 +119,11 @@ def from_origin(origin):
     merged.plot(column="all", cmap='OrRd', linewidth=0.8, edgecolor='0.8', ax=ax)
     plt.show()
 
-to_destination("Leeds")
-from_origin("Leeds")
+def main():
+
+    to_destination("Leeds")
+    from_origin("Leeds")
+
+if __name__ == "__main__":
+    
+    main()

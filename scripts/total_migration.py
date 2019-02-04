@@ -45,10 +45,16 @@ def total_migration():
 
     return net_migration
 
-net_migration = total_migration()
+def main():
 
-# plots
-shp_path = "data/UK_LAD_shapefiles_2017/UK_LAD.shp"
-var_name = net_migration
-title = "Net Migration - 2011 Census"
-uk_plot(shp_path, var_name, title)
+    net_migration = total_migration()
+
+    # plots
+    shp_path = "data/UK_LAD_shapefiles_2017/UK_LAD.shp"
+    var_name = net_migration
+    title = "Net Migration - 2011 Census"
+    uk_plot(shp_path, var_name, title)
+
+if __name__ == "__main__":
+    
+    main()

@@ -28,18 +28,24 @@ def migration():
     net_migration.rename("net_migration")
     print("\nTop ten net attractors of internal migration:")
     print(net_migration.sort_values(ascending=False).head(10))
-    print("\nTop ten net emittors of internal migration:")
+    print("\nTop ten net emitters of internal migration:")
     print(net_migration.sort_values().head(10))
 
     #net_migration.to_csv("data/net_migration.csv")
     return net_migration
 
-net_migration = migration()
+def main():
 
-# plots
-shp_path = "data/UK_LAD_shapefiles_2017/UK_LAD.shp"
-var_name = net_migration
-title = "Net Internal Migration - 2011 Census"
-# map_df = gpd.read_file("data/EW_LAD_shapefiles_2011/EW_LAD.shp")
-# merged = map_df.set_index("cmlad11nm").join(pd.DataFrame(net_migration)).fillna(value=0)
-uk_plot(shp_path, var_name, title)
+    net_migration = migration()
+
+    # plots
+    shp_path = "data/UK_LAD_shapefiles_2017/UK_LAD.shp"
+    var_name = net_migration
+    title = "Net Internal Migration - 2011 Census"
+    # map_df = gpd.read_file("data/EW_LAD_shapefiles_2011/EW_LAD.shp")
+    # merged = map_df.set_index("cmlad11nm").join(pd.DataFrame(net_migration)).fillna(value=0)
+    uk_plot(shp_path, var_name, title)
+
+if __name__ == "__main__":
+    
+    main()

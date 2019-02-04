@@ -26,10 +26,16 @@ def external_migration():
 
     return total_in, total_from
 
-total_in, total_from = external_migration()
+def main():
 
-# plots
-shp_path = "data/UK_LAD_shapefiles_2017/UK_LAD.shp"
-var_name = total_in
-title = "UK Destination of External Migration - 2011 Census"
-uk_plot(shp_path, var_name, title)
+    total_in = external_migration()[0]
+
+    # plots
+    shp_path = "data/UK_LAD_shapefiles_2017/UK_LAD.shp"
+    var_name = total_in
+    title = "UK Destination of External Migration - 2011 Census"
+    uk_plot(shp_path, var_name, title)
+
+if __name__ == "__main__":
+    
+    main()
