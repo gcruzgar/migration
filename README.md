@@ -1,7 +1,12 @@
 # Migration
 
+TO DO:
+- display flows (to and from each region?)
+- migration leaving the UK (+net external)
+- reason for migration
+
 Internal and external migration in the UK.    
-I am considering internal migration as that originating within the UK.    
+For the purpose of this work, internal migration is considered as that originating and ending within the UK.    
 External is that originating from countries outside the UK.
 
 Migration data obtained from 2011 [Census](https://www.nomisweb.co.uk/census/2011/origin_destination).            
