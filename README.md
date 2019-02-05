@@ -4,6 +4,7 @@ TO DO:
 - display flows (to and from each region?)
 - migration leaving the UK (+net external)
 - reason for migration
+- origin of external migration (how do different areas of the world compare)
 
 Internal and external migration in the UK.    
 For the purpose of this work, internal migration is considered as that originating and ending within the UK.    
