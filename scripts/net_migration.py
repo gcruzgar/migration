@@ -44,7 +44,7 @@ def main():
     title = "Net Internal Migration - 2011 Census"
     # map_df = gpd.read_file("data/EW_LAD_shapefiles_2011/EW_LAD.shp")
     # merged = map_df.set_index("cmlad11nm").join(pd.DataFrame(net_migration)).fillna(value=0)
-    uk_plot(shp_path, var_name, title)
+    uk_plot(shp_path, var_name, title, cmap='coolwarm')
 
 if __name__ == "__main__":
     

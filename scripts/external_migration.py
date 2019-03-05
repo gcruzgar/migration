@@ -34,7 +34,7 @@ def main():
     shp_path = "data/UK_LAD_shapefiles_2017/UK_LAD.shp"
     var_name = total_in
     title = "UK Destination of External Migration - 2011 Census"
-    uk_plot(shp_path, var_name, title)
+    uk_plot(shp_path, var_name, title, cmap='OrRd')
 
 if __name__ == "__main__":
     
